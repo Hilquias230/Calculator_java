@@ -58,7 +58,7 @@ public class Main {
 
                     var multiplication = firstNumber * secondNumber;
 
-                    System.out.printf("O resultado de %s + %s é = %s", firstNumber, secondNumber, multiplication);
+                    System.out.printf("O resultado de %s + %s é = %s", firstNumber, secondNumber, multiplication´);
 
                 }
                 case 5 -> System.exit(0);
