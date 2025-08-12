@@ -3,62 +3,54 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        System.out.println("=============================");
+        System.out.println("Insira o primeiro número:");
+        int firstNumber = scanner.nextInt();
+        System.out.println("Insira o segundo número:");
+        int secondNumber = scanner.nextInt();
+        System.out.println("=============================");
         while (true) {
+
             System.out.println("====CALCULADORA SIMPLES====");
             System.out.println("1 - ADIÇÃO");
             System.out.println("2 - SUBTRAÇÃO");
-            System.out.println("3 - DIVISÃO");
-            System.out.println("4 - MULTIPLICAÇÃO");
+            System.out.println("3 - MULTIPLICAÇÃO");
+            System.out.println("4 - DIVISÃO");
             System.out.println("5 - SAIR");
             System.out.println("============================");
-            System.out.println("Escolha:");
+            System.out.println("Escolha um deles para realizar a operação:");
             var option = scanner.nextInt();
 
             switch (option){
                 case 1 -> {
                     System.out.println("====ADIÇÃO====");
-                    System.out.println("Insira o primeiro número:");
-                    int firstNumber = scanner.nextInt();
-                    System.out.println("Insira o segundo número:");
-                    int secondNumber = scanner.nextInt();
 
-                    var sum = firstNumber + secondNumber;
+                    var result = Operators.SUM.execute(firstNumber, secondNumber);
 
-                    System.out.printf("O resultado de %s + %s é = %s \n", firstNumber, secondNumber, sum);
+                    System.out.printf("O resultado de %s + %s é = %s \n", firstNumber, secondNumber, result);
                 }
                 case 2 -> {
                     System.out.println("====SUBTRAÇÃO====");
-                    System.out.println("Insira o primeiro número:");
-                    int firstNumber = scanner.nextInt();
-                    System.out.println("Insira o segundo número:");
-                    int secondNumber = scanner.nextInt();
 
-                    var subtraction = firstNumber - secondNumber;
+                    var result = Operators.SUB.execute(firstNumber, secondNumber);
 
-                    System.out.printf("O resultado de %s + %s é = %s", firstNumber, secondNumber, subtraction);
+                    System.out.printf("O resultado de %s - %s é = %s \n", firstNumber, secondNumber, result);
 
                 }
                 case 3 -> {
-                    System.out.println("====DIVISÃO====");
-                    System.out.println("Insira o primeiro número:");
-                    int firstNumber = scanner.nextInt();
-                    System.out.println("Insira o segundo número:");
-                    int secondNumber = scanner.nextInt();
+                    System.out.println("====MULTIPLICAÇÃO====");
 
-                    var division = firstNumber / secondNumber;
+                    var result = Operators.MULTI.execute(firstNumber, secondNumber);
 
-                    System.out.printf("O resultado de %s + %s é = %s", firstNumber, secondNumber, division);
+                    System.out.printf("O resultado de %s X %s é = %s \n", firstNumber, secondNumber, result);
                 }
                 case 4 -> {
-                    System.out.println("====MULTIPLICAÇÃO====");
-                    System.out.println("Insira o primeiro número:");
-                    int firstNumber = scanner.nextInt();
-                    System.out.println("Insira o segundo número:");
-                    int secondNumber = scanner.nextInt();
+                    System.out.println("====DIVISÃO====");
 
-                    var multiplication = firstNumber * secondNumber;
+                    var result = Operators.DIV.execute(firstNumber, secondNumber);
 
-                    System.out.printf("O resultado de %s + %s é = %s", firstNumber, secondNumber, multiplication´);
+                    System.out.printf("O resultado de %s / %s é = %s \n", firstNumber, secondNumber, result);
 
                 }
                 case 5 -> System.exit(0);
